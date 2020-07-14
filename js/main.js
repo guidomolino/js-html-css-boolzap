@@ -1,7 +1,7 @@
 
 function addInputListener() {
-  var input = $("input");
-  target.keydown(sendKeydown);
+  var input = $("#txt-msg");
+  input.keydown(sendKeydown);
 }
 
 function sendKeydown(event) {
@@ -11,28 +11,28 @@ function sendKeydown(event) {
   // 13 = tasto invio
   if (tasto == 13) {
 
-    var msg = $(this);
-    var testoMessaggio = input.val();
+    console.log("invio");
 
-    msg.val("");
+    var msg = $(this);
+    var testoMessaggio = msg.val();
 
     sendMsg(testoMessaggio);
+    msg.val("")
   }
 
 }
 
 function sendMsg(txt) {
 
-  var copia = .clone
-  var target = messaggio utente
+  var copia = $("div .utente").clone();
 
-  trascrivo la copia con testo e timestamp
-  copia.find testo
-  copia.find timestamp
+  // trascrivo la copia con testo e timestamp
+  copia.find("p").text(txt);
+  copia.find("span").text(timeStamp());
 }
 
 function timeStamp() {
-
+  var timestamp = new Date().getTime();
 }
 
 function init() {

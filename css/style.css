@@ -106,7 +106,7 @@ body{
   position:
   color: lightgray;
 
-  background: url(img/search-solid.svg) no-repeat scroll 7px 7px;
+  /* background: url(img/search-solid.svg) no-repeat scroll 7px 7px; */
   background-color: white;
   padding-left:30px;
 }
@@ -238,24 +238,40 @@ body{
   background-color: white;
 }
 
-.msg-list .utente{
+.chat-box .utente{
+  position: relative;
+  float: right;
+  max-width: 60%;
+  min-width: 10%;
+
   margin-top: 10px ;
   padding: 10px;
 
   color: white;
   background-color: green;
   border-radius: 15px;
+
   text-align: right;
 }
 
-.msg-list .contatto{
+.chat-box .contatto{
+  position: relative;
+
+  max-width: 60%;
   margin-top: 10px ;
   padding: 10px;
 
   color: black;
   background-color: white;
-  width: 60%;
   border-radius: 15px;
+}
+
+.chat-box .contatto p{
+
+}
+
+.chat-box .utente p{
+
 }
 
 /* input messaggio */
