@@ -30,6 +30,134 @@ body{
 
   background-color: rgb(99, 231, 112);
 }
+
+/* profilo */
+
+.contatti .header{
+  background-color: lightgray;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contatti .header img{
+  width: 18%;
+  height: auto;
+  margin: 5px;
+
+
+  border-radius: 50%;
+}
+
+.contatti .header .right-icons{
+  color: grey;
+  font-size: 20px;
+}
+
+.contatti .header .right-icons i{
+  margin-right:10px;
+
+  cursor: pointer;
+}
+
+/* notifica */
+
+.contatti .notifica{
+  background-color: rgb(104, 217, 237);
+
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.contatti .notifica i{
+  padding: 5px;
+  margin: 5px 5px 5px 0;
+  background-color: white;
+  border-radius: 50%;
+  color: rgb(104, 217, 237);
+
+}
+
+.contatti .notifica p:nth-child(1){
+  font-size: 16px;
+}
+
+.contatti .notifica p:nth-child(2){
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+}
+
+/* lista contatti */
+/* input ricerca */
+.contatti .contact-box .search input{
+  border: 0;
+
+  width: 100%;
+  height: 25px;
+
+  position:
+  color: lightgray;
+
+  background: url(img/search-solid.svg) no-repeat scroll 7px 7px;
+  background-color: white;
+  padding-left:30px;
+}
+
+.contatti .contact-list{
+  display: flex;
+  flex-direction: column;
+
+
+  list-style: none;
+}
+
+.contatti .contact-list li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+  border-top: 1px solid lightgray;
+}
+
+.contatti .contact-list li .contact-info{
+  display: flex;
+  align-items: center;
+}
+
+.contatti .contact-list li img{
+  width: 15%;
+  height: auto;
+
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.contatti .contact-list li p:nth-child(1){
+  font-size: 16px;
+}
+
+.contatti .contact-list li p:nth-child(2){
+  font-size: 12px;
+  color: gray;
+}
+
+.contatti .contact-list .contact-selected{
+  background-color: lightgray;
+}
+
+.contatti .contact-list li .timestamp p{
+  font-size: 12px;
+  margin-right: 4px;
+}
 /* sezione chat */
 .chat{
   width: 70%;
@@ -37,6 +165,59 @@ body{
 
   background-color: rgba(37, 214, 156, 0.49);
 }
+
+/* header chat */
+
+.chat .header{
+  width: 100%;
+  height: 70px;
+  background-color: lightgray;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat .header .chatter{
+  display: flex;
+  align-items: center;
+
+}
+
+.chat .header .chatter img{
+  width: 16%;
+  height: auto;
+  margin: 5px;
+
+
+  border-radius: 50%;
+}
+
+.chat .header .chatter .info-chatter{
+  margin-left: 15px;
+}
+
+.chat .header .chatter .info-chatter p:nth-child(1){
+ font-size: 15px;
+}
+
+.chat .header .chatter .info-chatter p:nth-child(2){
+ font-size: 12px;
+ color: gray;
+}
+
+.chat .header .right-icons{
+  color: grey;
+  font-size: 20px;
+}
+
+.chat .header .right-icons i{
+  margin-right:10px;
+
+  cursor: pointer;
+}
+
+
 /* display messaggi */
 .msg-box{
   width: 100%;
