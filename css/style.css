@@ -238,11 +238,20 @@ body{
   background-color: white;
 }
 
+.chat-box{
+  width: 100%;
+}
+
 .chat-box .utente{
   position: relative;
-  float: right;
+  right: 0;
+  margin-left: 40%;
   max-width: 60%;
   min-width: 10%;
+}
+
+.messaggio{
+  display: none;
 
   margin-top: 10px ;
   padding: 10px;
@@ -254,24 +263,33 @@ body{
   text-align: right;
 }
 
+.sent{
+  display: block;
+}
+
 .chat-box .contatto{
   position: relative;
 
+  text-align: left;
   max-width: 60%;
-  margin-top: 10px ;
-  padding: 10px;
+  min-width: 10%;
+  margin-right: 40%;
+}
+
+.ricevuto{
+  display: block;
 
   color: black;
   background-color: white;
   border-radius: 15px;
+  margin-top: 10px ;
+  padding: 10px;
 }
 
-.chat-box .contatto p{
+/* messaggio template */
 
-}
-
-.chat-box .utente p{
-
+#template-messaggio{
+  display: none;
 }
 
 /* input messaggio */

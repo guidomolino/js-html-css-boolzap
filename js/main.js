@@ -1,72 +1,86 @@
 
 function addInputListener() {
+
   var input = $("#txt-msg");
-  var ok = false;
-  input.keydown(sendKeydown);
   input.keyup(sendKeyup);
+
 }
 
 // invio messaggio
 
-function sendKeydown(event) {
+function sendKeyup(event) {
 
   var tasto = event.which;
+
+  console.log(event.which);
 
   var msg = $(this);
   var testoMessaggio = msg.val();
   // 13 = tasto invio
-  if (tasto == 13 & testoMessaggio) {
+  if (tasto == 13) {
 
     console.log("invio");
 
-    sendMsg(testoMessaggio);
-    msg.val("")
+    sendChat(msg, testoMessaggio);
 
-    var ok = true;
   }
 
 }
 
-function sendMsg(txt) {
+function sendChat(input, txt) {
 
-  var copia = $("div .utente").clone();
+    input.val('');
+
+    sendMsg(txt,"utente sent");
+    setTimeout(function() { sendMsg('ok', 'contatto ricevuto'); }, 1000);
+}
+
+function sendMsg(txt,type) {
+
+  var copia = $("#template div").clone();
+  var posizione = $('.chat-box')
+
+  copia.addClass(type)
 
   // trascrivo la copia con testo e timestamp
   copia.find("p").text(txt);
-  copia.find("span").text(timeStamp());
+  copia.find("span").text(oraAttuale());
+
+  posizione.append(copia);
 
 }
 
-function timeStamp() {
-  var timestamp = new Date().getTime();
+function oraAttuale() {
+  var date = new Date();
+  return date.getHours() + ':' + date.getMinutes();
 }
 
-// il contatto invia l'ok
-function sendKeyup(event) {
-  var tasto = event.which;
 
-  if (tasto == 13 & ok==true) {
+// search bar
 
-    var contatto = $("div .contatto");
+function searchFunction() {
+  // variabili
+  var input, filter, ul, li, p, i, txtValue;
+  input = document.getElementById('inputContatti');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("listaContatti");
+  li = listaContatti.getElementsByTagName('li');
 
-    setTimeout(contatto);
-
-    var ok = false;
+  // Loop
+  for (i = 0; i < li.length; i++) {
+    p = li[i].getElementsByTagName("p")[0];
+    txtValue = p.textContent || p.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
   }
 }
 
-function setTimeout(contatto) {
-  var contatto = $("div .contatto");
-  var copiaContatto = contatto.clone();
-
-  // trascrivo la copia con testo e timestamp
-  copiaContatto.find("p").text("Ok");
-  copiaContatto.find("span").text(timeStamp());
-  console.log("ok");
-} 1000;
-
 function init() {
   addInputListener();
+  searchFunction();
 }
 
 $(document).ready(init);

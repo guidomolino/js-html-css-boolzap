@@ -17,6 +17,8 @@
   <body>
 
     <section class="applicazione">
+
+      <!-- profilo personale -->
       <div class="contatti">
         <div class="header">
           <img src="img/myAvatar.png" alt="">
@@ -33,11 +35,14 @@
             <p>Attiva notifiche desktop</p>
           </div>
         </div>
+        <!-- contatti -->
         <div class="contact-box">
+          <!-- barra ricerca contatti -->
           <div class="search">
-            <input type="search" placeholder="Cerca o inizia una nuova chat" name="" value="">
+            <input id="inputContatti" onkeyup="searchFunction()" type="search" placeholder="Cerca o inizia una nuova chat" name="" value="">
           </div>
-          <ul class="contact-list">
+          <!-- lista contatti -->
+          <ul id="listaContatti" class="contact-list">
             <li class="contact-selected">
               <div class="contact-info">
                 <img src="img/gianni.png" alt="">
@@ -74,13 +79,14 @@
                 <p>mai</p>
               </div>
             </li>
-
           </ul>
         </div>
-
       </div>
+
+      <!-- chat -->
       <div class="chat">
         <div class="msg-box">
+          <!-- header contatto selezionato -->
           <div class="header">
             <div class="chatter">
               <img src="img/gianni.png" alt="">
@@ -88,7 +94,6 @@
                 <p>Gianni</p>
                 <p>Ultimo accesso ieri alle 23:21</p>
               </div>
-
             </div>
             <div class="right-icons">
               <i class="far fa-circle"></i>
@@ -96,16 +101,25 @@
               <i class="fas fa-ellipsis-v"></i>
             </div>
           </div>
+          <!-- contenitore messaggi -->
           <div class="chat-box">
             <div class="contatto">
-              <p>Ciao, come stai?</p>
+              <div class="ricevuto">
+                <p>Ciao, come stai?</p>
+              </div>
             </div>
             <div class="utente">
-              <p>Bene grazie!</p>
-              <span>13:43</span>
             </div>
           </div>
         </div>
+        <!-- struttura d'esempio del messaggio -->
+        <div id="template" style="display:none">
+          <div class="messaggio">
+            <p>Bene grazie!</p>
+            <span>13:43</span>
+          </div>
+        </div>
+        <!-- input di testo dell'utente -->
         <div class="type-box">
           <i class="fas fa-paperclip"></i>
           <input id="txt-msg" type="text" placeholder="Inserisci il testo del messaggio" name="" value="">
